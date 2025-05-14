@@ -27,7 +27,7 @@ message LoginRequest {
 
 message LoginResponse {
   string accessToken = 1; // Auth token of logged in user.
-  string refreshToken = 2; // Auth token of logged in user.
+  string refreshToken = 2; // Refresh token of logged in user.
 }
 
 message IsAdminRequest {
