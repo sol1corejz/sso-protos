@@ -37,9 +37,8 @@ message TokenCheckRequest {
 }
 
 message TokenCheckResponse {
-  bool is_valid = 1;               // Общий статус валидности
-  string new_access_token = 2;     // Новый access (если обновлен)
-  string error_message = 3;        // Ошибка (если оба токена невалидны)
+  bool is_valid = 1;               // Validation status
+  string new_access_token = 2;     // New access (if updated)
 }
 
 message IsAdminRequest {
