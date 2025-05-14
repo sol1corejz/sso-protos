@@ -8,6 +8,7 @@ service Auth {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
   rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
+  rpc CheckAndRefreshTokens(TokenCheckRequest) returns (TokenCheckResponse);
 }
 
 message RegisterRequest {
@@ -28,6 +29,17 @@ message LoginRequest {
 message LoginResponse {
   string accessToken = 1; // Auth token of logged in user.
   string refreshToken = 2; // Refresh token of logged in user.
+}
+
+message TokenCheckRequest {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message TokenCheckResponse {
+  bool is_valid = 1;               // Общий статус валидности
+  string new_access_token = 2;     // Новый access (если обновлен)
+  string error_message = 3;        // Ошибка (если оба токена невалидны)
 }
 
 message IsAdminRequest {
