@@ -23,7 +23,7 @@ message RegisterResponse {
 message LoginRequest {
   string email = 1; // Email of the user to login.
   string password = 2; // Password of the user to login.
-  string app_id = 3; // ID of the app to login to.
+  string app_name = 3; // Name of the app to login to.
 }
 
 message LoginResponse {
