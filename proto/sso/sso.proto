@@ -39,6 +39,7 @@ message TokenCheckRequest {
 message TokenCheckResponse {
   bool is_valid = 1;               // Validation status
   string new_access_token = 2;     // New access (if updated)
+  string new_refresh_token = 3;     // New refresh (if updated)
 }
 
 message IsAdminRequest {
